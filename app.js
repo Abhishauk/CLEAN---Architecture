@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const DBconnect = require('./src/db/connection/db')
 
 
 const port = 7000;
@@ -8,6 +9,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
+DBconnect();
 
 
 app.listen(port , () => {
